@@ -2,7 +2,7 @@
 //ImageJ can be downloaded: https://imagej.net/Fiji/Downloads
 //Before macro usage: plugins have to be installed. 
 //For installing: go to imageJ toolbar → help → update... after a short while the "imageJ updated" will appear, press the button "manage update sites" in the left bottom corner. 
-//In the "manage update sites" select BioVoxxel, ImageScience, Morphology, biomedgroup, Hadim, IBMP-CNRS, IJPB, Imagescience, Morphology, Particle sizer, Scientifig, UCB Vision Scineces, then close manage update site and then press apply changes. After updating restart imageJ. 
+//In the "manage update sites" select BioVoxxel, ImageScience and Morphology. Then close manage update site and then press apply changes. After updating restart imageJ. 
 //Note: all default values can be changed by changing the defaultvalue after declaration of the variable: "var variable = defaultvalue".  
 //Note: This macro only works for images with black particles on white backgrounds. For darkfield microscopy the images have to be inverted before usage. 
 
