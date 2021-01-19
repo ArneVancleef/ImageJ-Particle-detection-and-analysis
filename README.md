@@ -1,9 +1,9 @@
 # ImageJ-Particle-detection-and-analysis
-An automated imageJ macro which can be used to detect and measure the size of particles in images, maps of images or videos
+An automated imageJ macro which can be used to detect and measure the size of particles in images, maps of images or videos.
 
 This code will detect and measure particles in an image as long as they have a defined perimeter and do not touch too many other particles. 
 
-Read me
+Read me:
 
 In order to run the macro, copy the code (name: MacroU-Vxx) and go to imageJ -> plugin -> new -> Macro. Then paste the code here and press run.
 
