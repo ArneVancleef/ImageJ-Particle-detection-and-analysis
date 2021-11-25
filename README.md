@@ -1,18 +1,34 @@
 # ImageJ-Particle-detection-and-analysis
-An automated imageJ macro which can be used to detect and measure the size of particles in images, maps of images or videos.
+An automated imageJ macro which can be used to detect and measure the size of particles in images. The macro can be used to analyze single images, maps of images and videos.
 
 This code will detect and measure particles in an image as long as they have a defined perimeter and do not touch too many other particles. 
 
 Read me:
 
-In order to run the macro, copy the code (name: MacroU-Vxx) and go to imageJ -> plugin -> new -> Macro. Then paste the code here and press run.
+If you don't have imageJ, go to https://imagej.net/Fiji/Downloads to download it. 
+Before the macro can be used a few plugins have to be installed, in order to instal these do the following: 
+go to imageJ toolbar → help → update... after a short while the "imageJ updated" will appear, press the button "manage update sites" in the left bottom corner. 
+In the "manage update sites" select BioVoxxel, biomedgroup, ImageScience, and Morphology then close manage update site and then press apply changes. After updating restart imageJ. 
 
-After running the code a window will appear with analysis settings, here the settings have to be adjusted for the desired analysis. 
-Once the desired settings are set press ok to process the images. An overview of all settings is given below:
-Note that there are certain plugins this macro depends on in order to run, information on how to download these can be found in the first lines of the macro code itself.
+Now the code can be run by going to imageJ -> plugin -> new -> Macro. Paste the code here (Name MacroU-Vxx, take the latest version). 
+After running the code a window will appear with analysis settings, the default settings will generally suffice to analyze particles, but settings can be changed based on the application. 
+There are 3 settings that have to be adjusted for each analysis, and these are the first 3, more information about all these settings can be found below:
+Once the desired settings are set press ok to process the images.
 
+In order to test the macro on a new kind of image first open a single image (with particles) to test the macro on: 
+To open an image go to File → open..., in case a video needs to be analyzed go to file and open the video, then press ctrl + shift + d to duplicate on image of this video.
+In order to test (preview) the macro, run the code ( imageJ -> plugin -> new -> Macro, paste the macro -> press run) 
+The analysis settings will appear, for the preview all standard settings are okay, including the first three (as the scale doesn't matter for the preview, the second setting is the preview mode, and the third setting is the background method, the rolling ball method is perfect for new images). 
+Press ok to do the preview. A couple of seconds later an outline will be drawn on the particles.
+If the ouline is okay the analysis can be done using these settings (only the first three might need to change). If the outline is not okay, settings need to be adjusted.
+close the macro in order to zoom on the image. 
+
+note: the minimimum size setting needs to be changes after each run of the preview mode. Make sure to change it back to the original value. 
+note: make sure the particles are black and the background white, if this is not the case go to edit -> invert
+
+Information on the settings:
 1. Scale 
-The scale in pixels/µm is necessary for pixel calibration! The correct scale can be found using an image of an object micrometer and going to Analyze ? Set scale
+The scale in pixels/µm is necessary for pixel calibration! The correct scale can be found using an image of an object micrometer and going to Analyze -> Set scale. This value needs to be correct in order to measure the actual size of particles. 
 
 2. file type
 This is the type of file that has to be analyzed, there are 4 options: 
@@ -26,9 +42,11 @@ This is the type of file that has to be analyzed, there are 4 options:
 
 3. background
 This is the method that is used to subtract the background from the image. 3 methods exist for this: 
-- Rolling ball background subtraction: with this method the computer generates a background from the original image
-- Background image is open: A background image is open manually or by another way and is open in imageJ during the whole analysis. 
-- Median method: a background image is constructed from multiple frames by taking the median of each pixel value. This method only works for map of videos or map with maps of images. This method also removes scratches or stuck aparticles on top of uneven lighting. 
+- Rolling ball background subtraction: with this method the computer generates a background from the original image. Can be used on a single image and is the easiest method when working with only one image. 
+- Background image is open: A background image is open manually or by another way and is open in imageJ during the whole analysis. Rather unconvenient method. 
+- Median method: a background image is constructed from multiple frames by taking the median of each pixel value. This method only works for map of videos or map with maps of images. This method also removes scratches or stuck aparticles on top of uneven lighting. Prefered method when working with more than 20 images. 
+
+---
 
 4. Edge detection threshold
 This is the high threshold for the edge detection, the most important threshold, the higher this threshold the sharper a particle must be before being detected. 3 is a good starting value for most images (with a edge detection smoothing of 2 and sharpening of 0.40). If not enough particles are detected: increase threshold, if too much particles are detected, reduce threshold. 
