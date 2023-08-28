@@ -4,7 +4,6 @@
 //For installing: go to imageJ toolbar → help → update... after a short while the "imageJ updated" will appear, press the button "manage update sites" in the left bottom corner. 
 //In the "manage update sites" select BioVoxxel, biomedgroup, ImageScience, and Morphology then close manage update site and then press apply changes. After updating restart imageJ. 
 //Note: all default values can be changed by changing the defaultvalue after declaration of the variable: "var variable = defaultvalue".  
-//Note: This macro only works for images with black particles on white backgrounds. For darkfield microscopy the images have to be inverted before usage. 
 //Note: Make sure that there are no long lines (like the top and bottom edges of a flow cell) in the image that run from one end of the image to the other end, in this case everything between these lines will be detected, but will be removed as it touches the edges. Crop these edges of before analysis.
 
 macro "Particle detection and analysis" {
